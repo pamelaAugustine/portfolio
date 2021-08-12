@@ -95,12 +95,12 @@ const Main = () => {
           <div className="w3-col m6 w3-center w3-padding-large">
             <p>
               <b>
-                <i className="fas fa-user w3-margin-right"></i>My Name
+                <i className="fas fa-user w3-margin-right"></i>Pamela Augustine
               </b>
             </p>
             <br />
             <img
-              src="./assets/images/avatar_hat"
+              src="./assets/images/pamelaAugustine11.jpg"
               className="w3-round w3-image w3-opacity w3-hover-opacity-off"
               alt="portfolio"
               width="500"
