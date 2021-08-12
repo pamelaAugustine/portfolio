@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Main = () => {
-  const toggleFunction = () => {
-    console.log("clicked");
-  };
+  const [toggle, setToggle] = useState(false);
+
+ 
   const onClick = () => {
     console.log("this was clicked!");
   };
@@ -13,7 +13,7 @@ const Main = () => {
         <div className="w3-bar" id="myNavbar">
           <div
             className="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
-            onClick={toggleFunction}
+            onClick={() => setToggle(!toggle)}
             title="Toggle Navigation Menu"
           >
             <i className="fas fa-bars"></i>
@@ -30,44 +30,37 @@ const Main = () => {
           <a href="#contact" className="w3-bar-item w3-button w3-hide-small">
             <i className="fas fa-envelope"></i> CONTACT
           </a>
-          <div className="w3-bar-item w3-button w3-hide-small w3-right w3-hover-red">
-            <i className="fas fa-search"></i>
-          </div>
         </div>
 
-        <div
-          id="navDemo"
-          className="w3-bar-block w3-white w3-hide w3-hide-large w3-hide-medium"
-        >
+        <div className={toggle?"w3-bar-block w3-white w3-hide-large w3-hide-medium":"w3-hide"}>
           <a
             href="#about"
             className="w3-bar-item w3-button"
-            onClick={toggleFunction}
+            onClick={() => setToggle(!toggle)}
           >
             ABOUT
           </a>
           <a
             href="#portfolio"
             className="w3-bar-item w3-button"
-            onClick={toggleFunction}
+            onClick={() => setToggle(!toggle)}
           >
             PORTFOLIO
           </a>
           <a
             href="#contact"
             className="w3-bar-item w3-button"
-            onClick={toggleFunction}
+            onClick={() => setToggle(!toggle)}
           >
             CONTACT
           </a>
-          <div className="w3-bar-item w3-button">SEARCH</div>
         </div>
       </div>
 
       <div className="bgimg-1 w3-display-container w3-opacity-min" id="home">
-        <div className="w3-display-middle" style={{ whiteSpace: "nowrap" }}>
+        <div className="w3-display-middle row">
           <span className="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
-            PAMELA <span className="w3-hide-small">AUGUSTINE</span>{" "}
+            PAMELA <span>AUGUSTINE</span>{" "}
           </span>
         </div>
       </div>
@@ -75,7 +68,7 @@ const Main = () => {
       <div className="w3-content w3-container w3-padding-64" id="about">
         <h3 className="w3-center">ABOUT ME</h3>
         <p className="w3-center">
-          <em>I love photography</em>
+          <em>I'M A BOSS!</em>
         </p>
         <p>
           We have created a fictional "personal" website/blog, and our fictional
