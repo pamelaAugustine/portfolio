@@ -100,7 +100,7 @@ const Main = () => {
             </p>
             <br />
             <img
-              src="./assets/images/pamelaAugustine11.jpg"
+              src="./assets/images/pamelaAugustine12.jpg"
               className="w3-round w3-image w3-opacity w3-hover-opacity-off"
               alt="portfolio"
               width="500"
