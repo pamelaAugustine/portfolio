@@ -4,6 +4,9 @@ body, html {
   color: #777;
   line-height: 1.8;
 }
+#myNavbar {
+  color:rgb(42, 48, 102)
+}
 
 /* Create a Parallax Effect */
 .bgimg-1, .bgimg-2, .bgimg-3 {
