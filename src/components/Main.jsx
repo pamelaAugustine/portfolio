@@ -31,8 +31,8 @@ const Main = () => {
           <a href="#portfolio" className="w3-bar-item w3-button w3-hide-small">
             <i className="fas fa-th"></i> PORTFOLIO
           </a>
-          <a href="#contact" className="w3-bar-item w3-button w3-hide-small">
-            <i className="fas fa-envelope"></i> CONTACT
+          <a href="#tools" className="w3-bar-item w3-button w3-hide-small">
+            <i className="fas fa-tools"></i> TOOLS
           </a>
         </div>
         <div
@@ -64,11 +64,11 @@ const Main = () => {
           PORTFOLIO
         </a>
         <a
-          href="#contact"
+          href="#tools"
           className="w3-bar-item w3-button"
           onClick={() => setToggle(!toggle)}
         >
-          CONTACT
+          TOOLS
         </a>
       </div>
       </div>
