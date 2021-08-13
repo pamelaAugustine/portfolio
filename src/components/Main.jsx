@@ -327,10 +327,10 @@ const Main = () => {
               Tucson, AZ
               <br />
               <i className="fas fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>{" "}
-              Phone: 520.965.5721
+              Phone: 520.***.****
               <br />
               <i className="fas fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>{" "}
-              Email: pamela.augustine11@gmail.com
+              Email: pamela@gmail.com
               <br />
             </div>
             <p>Leave me a note:</p>
