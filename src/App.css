@@ -55,3 +55,39 @@ body, html {
   display: flex;
   flex-wrap: wrap;
 }
+
+.dropdown {
+  position: absolute;
+  background-color: white;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  
+}
+
+.on-top{
+  z-index: 9000 !important; 
+  position: fixed;
+  top: 0;
+  right: 0;
+}
+
+.links-small-screen {
+  width: 100%;
+  padding-top: 64px;
+  justify-content: space-evenly;
+  display: flex;
+
+}
+.link-icon {
+  width: 150px;
+ height: auto;
+}
+
+@media (max-width: 700px) {
+  .link-icon{
+    width: 50px;
+  }
+
+}
+

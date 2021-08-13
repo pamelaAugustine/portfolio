@@ -1,23 +1,27 @@
 import React, { useState } from "react";
+import Links from './Links'
+import Skills from './Skills'
+import Tools from './Tools'
+
 
 const Main = () => {
   const [toggle, setToggle] = useState(false);
 
- 
   const onClick = () => {
     console.log("this was clicked!");
   };
   return (
-    <div>
-      <div className="w3-top">
-        <div className="w3-bar" id="myNavbar">
-          <div
-            className="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large w3-right"
+    <div>   
+      <div
+            className="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large on-top"
             onClick={() => setToggle(!toggle)}
             title="Toggle Navigation Menu"
           >
             <i className="fas fa-bars"></i>
           </div>
+      <div className="w3-top">
+        <div className="w3-bar" id="myNavbar">
+          
           <a href="#home" className="w3-bar-item w3-button">
             HOME
           </a>
@@ -31,32 +35,44 @@ const Main = () => {
             <i className="fas fa-envelope"></i> CONTACT
           </a>
         </div>
-
-        <div className={toggle?"w3-bar-block w3-white w3-hide-large w3-hide-medium":"w3-hide"}>
-          <a
-            href="#about"
-            className="w3-bar-item w3-button"
-            onClick={() => setToggle(!toggle)}
-          >
-            ABOUT
-          </a>
-          <a
-            href="#portfolio"
-            className="w3-bar-item w3-button"
-            onClick={() => setToggle(!toggle)}
-          >
-            PORTFOLIO
-          </a>
-          <a
-            href="#contact"
-            className="w3-bar-item w3-button"
-            onClick={() => setToggle(!toggle)}
-          >
-            CONTACT
-          </a>
-        </div>
+        <div
+        className={
+          toggle
+            ? "w3-bar-block w3-white w3-hide-large w3-hide-medium dropdown"
+            : "w3-hide"
+        }
+      > 
+       <a
+      href="#home"
+      className="w3-bar-item w3-button"
+      onClick={() => setToggle(!toggle)}
+    >
+      HOME
+    </a>
+         <a
+          href="#about"
+          className="w3-bar-item w3-button"
+          onClick={() => setToggle(!toggle)}
+        >
+          ABOUT
+        </a>
+        <a
+          href="#portfolio"
+          className="w3-bar-item w3-button"
+          onClick={() => setToggle(!toggle)}
+        >
+          PORTFOLIO
+        </a>
+        <a
+          href="#contact"
+          className="w3-bar-item w3-button"
+          onClick={() => setToggle(!toggle)}
+        >
+          CONTACT
+        </a>
       </div>
-
+      </div>
+   
       <div className="bgimg-1 w3-display-container w3-opacity-min" id="home">
         <div className="w3-display-middle row">
           <span className="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
@@ -64,9 +80,11 @@ const Main = () => {
           </span>
         </div>
       </div>
-
+      <Links/>
       <div className="w3-content w3-container w3-padding-64" id="about">
+      
         <h3 className="w3-center">ABOUT ME</h3>
+        
         <p className="w3-center">
           <em>I'M A BOSS!</em>
         </p>
@@ -117,71 +135,16 @@ const Main = () => {
             </p>
           </div>
         </div>
-        <p className="w3-large w3-center w3-padding-16">Im really good at:</p>
-        <p className="w3-wide">
-          <i className="fas fa-camera"></i>Photography
-        </p>
-        <div className="w3-light-grey">
-          <div
-            className="w3-container w3-padding-small w3-dark-grey w3-center"
-            style={{ width: 90 + "%" }}
-          >
-            90%
-          </div>
-        </div>
-        <p className="w3-wide">
-          <i className="fas fa-laptop"></i>Web Design
-        </p>
-        <div className="w3-light-grey">
-          <div
-            className="w3-container w3-padding-small w3-dark-grey w3-center"
-            style={{ width: 85 + "%" }}
-          >
-            85%
-          </div>
-        </div>
-        <p className="w3-wide">
-          <i className="fas fa-photo"></i>Photoshop
-        </p>
-        <div className="w3-light-grey">
-          <div
-            className="w3-container w3-padding-small w3-dark-grey w3-center"
-            style={{ width: 75 + "%" }}
-          >
-            75%
-          </div>
-        </div>
       </div>
-
-      <div className="w3-row w3-center w3-dark-grey w3-padding-16">
-        <div className="w3-quarter w3-section">
-          <span className="w3-xlarge">14+</span>
-          <br />
-          Partners
-        </div>
-        <div className="w3-quarter w3-section">
-          <span className="w3-xlarge">55+</span>
-          <br />
-          Projects Done
-        </div>
-        <div className="w3-quarter w3-section">
-          <span className="w3-xlarge">89+</span>
-          <br />
-          Happy Clients
-        </div>
-        <div className="w3-quarter w3-section">
-          <span className="w3-xlarge">150+</span>
-          <br />
-          Meetings
-        </div>
-      </div>
-
+     
+    
+       
       <div className="bgimg-2 w3-display-container">
         <div className="w3-display-middle">
-          <span className="w3-xxlarge w3-text-white w3-wide">PORTFOLIO</span>
+          <span className="w3-xxlarge w3-text-white w3-wide">BOSS SKILLS</span>
         </div>
       </div>
-
+      <Skills/>
       <div className="w3-content w3-container w3-padding-64" id="portfolio">
         <h3 className="w3-center">MY WORK</h3>
         <p className="w3-center">
@@ -274,15 +237,9 @@ const Main = () => {
               alt="Sailing"
             ></img>
           </div>
-          <button
-            className="w3-button w3-padding-large w3-light-grey"
-            style={{ marginTtop: 64 + "px" }}
-          >
-            LOAD MORE
-          </button>
+        
         </div>
       </div>
-
       <div id="modal01" className="w3-modal w3-black" onClick={onClick}>
         <span
           className="w3-button w3-large w3-black w3-display-topright"
@@ -299,81 +256,13 @@ const Main = () => {
           <p id="caption" className="w3-opacity w3-large"></p>
         </div>
       </div>
-
       <div className="bgimg-3 w3-display-container w3-opacity-min">
         <div className="w3-display-middle">
-          <span className="w3-xxlarge w3-text-white w3-wide">CONTACT</span>
+          <span className="w3-xxlarge w3-text-white w3-wide">TOOLS</span>
         </div>
       </div>
-
-      <div className="w3-content w3-container w3-padding-64" id="contact">
-        <h3 className="w3-center">WHERE I WORK</h3>
-        <p className="w3-center">
-          <em>I'd love your feedback!</em>
-        </p>
-
-        <div className="w3-row w3-padding-32 w3-section">
-          <div className="w3-col m4 w3-container">
-            <img
-              src="./assets/images/map.jpg"
-              className="w3-image w3-round"
-              style={{ width: 100 + "%" }}
-              alt="meaningful text"
-            ></img>
-          </div>
-          <div className="w3-col m8 w3-panel">
-            <div className="w3-large w3-margin-bottom">
-              <i className="fas fa-map-marker fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>{" "}
-              Tucson, AZ
-              <br />
-              <i className="fas fa-phone fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>{" "}
-              Phone: 520.***.****
-              <br />
-              <i className="fas fa-envelope fa-fw w3-hover-text-black w3-xlarge w3-margin-right"></i>{" "}
-              Email: pamela@gmail.com
-              <br />
-            </div>
-            <p>Leave me a note:</p>
-            <form target="_blank">
-              <div className="w3-row-padding">
-                <div className="w3-half">
-                  <input
-                    className="w3-input w3-border"
-                    type="text"
-                    placeHolder="Name"
-                    required
-                    name="Name"
-                  ></input>
-                </div>
-                <div className="w3-half">
-                  <input
-                    className="w3-input w3-border"
-                    type="text"
-                    placeHolder="Email"
-                    required
-                    name="Email"
-                  ></input>
-                </div>
-              </div>
-              <br />
-              <input
-                className="w3-input w3-border"
-                type="text"
-                placeHolder="Message"
-                required
-                name="Message"
-              ></input>
-              <button
-                className="w3-button w3-black w3-right w3-section"
-                type="submit"
-              >
-                <i className="fas fa-paper-plane"></i> SEND MESSAGE
-              </button>
-            </form>
-          </div>
-        </div>
-      </div>
-
+      <Tools/>
+     
       <footer className="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
         <a href="#home" className="w3-button w3-light-grey">
           <i className="fas fa-arrow-up w3-margin-right"></i>To the top
