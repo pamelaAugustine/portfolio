@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Links from "./Links";
 import Skills from "./Skills";
 import Tools from "./Tools";
+import NavBar from "./NavBar/NavBar";
 
 const Main = () => {
   const [toggle, setToggle] = useState(false);
@@ -12,9 +13,9 @@ const Main = () => {
   const onClick = (event) => {
     setToggleModal(true);
     setCaption(event.target.alt);
-    setImage(event.target.currentSrc)
-    console.log(event);
+    setImage(event.target.currentSrc);
   };
+  
   return (
     <div>
       <div
@@ -24,58 +25,7 @@ const Main = () => {
       >
         <i className="fas fa-bars"></i>
       </div>
-      <div className="w3-top">
-        <div className="w3-bar" id="myNavbar">
-          <a href="#home" className="w3-bar-item w3-button">
-            HOME
-          </a>
-          <a href="#about" className="w3-bar-item w3-button w3-hide-small">
-            <i className="fas fa-user"></i> ABOUT
-          </a>
-          <a href="#portfolio" className="w3-bar-item w3-button w3-hide-small">
-            <i className="fas fa-th"></i> PORTFOLIO
-          </a>
-          <a href="#tools" className="w3-bar-item w3-button w3-hide-small">
-            <i className="fas fa-tools"></i> TOOLS
-          </a>
-        </div>
-        <div
-          className={
-            toggle
-              ? "w3-bar-block w3-white w3-hide-large w3-hide-medium dropdown"
-              : "w3-hide"
-          }
-        >
-          <a
-            href="#home"
-            className="w3-bar-item w3-button"
-            onClick={() => setToggle(!toggle)}
-          >
-            HOME
-          </a>
-          <a
-            href="#about"
-            className="w3-bar-item w3-button"
-            onClick={() => setToggle(!toggle)}
-          >
-            ABOUT
-          </a>
-          <a
-            href="#portfolio"
-            className="w3-bar-item w3-button"
-            onClick={() => setToggle(!toggle)}
-          >
-            PORTFOLIO
-          </a>
-          <a
-            href="#tools"
-            className="w3-bar-item w3-button"
-            onClick={() => setToggle(!toggle)}
-          >
-            TOOLS
-          </a>
-        </div>
-      </div>
+      <NavBar toggle={toggle} setToggle={(boolean) => setToggle(boolean)} />
 
       <div className="bgimg-1 w3-display-container w3-opacity-min" id="home">
         <div className="w3-display-middle row">
@@ -242,22 +192,23 @@ const Main = () => {
           </div>
         </div>
       </div>
-     {toggleModal && <div className="project-modal w3-black" onClick={()=> setToggleModal(false)}>
-        <span
-          className="w3-button w3-large w3-black w3-display-topright"
-          title="Close Modal Image"
+      {toggleModal && (
+        <div
+          className="project-modal w3-black"
+          onClick={() => setToggleModal(false)}
         >
-          <i className="fas fa-remove"></i>
-        </span>
-     <div className="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
-          <img
-            src={image}
-            className="w3-image"
-            alt={caption}
-          ></img>
-          <p className="w3-opacity w3-large">{caption}</p>
+          <span
+            className="w3-button w3-large w3-black w3-display-topright"
+            title="Close Modal Image"
+          >
+            <i className="fas fa-remove"></i>
+          </span>
+          <div className="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+            <img src={image} className="w3-image" alt={caption}></img>
+            <p className="w3-opacity w3-large">{caption}</p>
+          </div>
         </div>
-      </div>}
+      )}
       <div className="bgimg-3 w3-display-container w3-opacity-min">
         <div className="w3-display-middle">
           <span className="w3-xxlarge w3-text-white w3-wide">TOOLS</span>
