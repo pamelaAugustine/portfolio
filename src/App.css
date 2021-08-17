@@ -1,15 +1,26 @@
-body,h1,h2,h3,h4,h5,h6 {font-family: "Lato", sans-serif;}
-body, html {
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Lato", sans-serif;
+}
+body,
+html {
   height: 100%;
   color: #777;
   line-height: 1.8;
 }
 #myNavbar {
-  color:rgb(42, 48, 102)
+  color: rgb(42, 48, 102);
 }
 
 /* Create a Parallax Effect */
-.bgimg-1, .bgimg-2, .bgimg-3 {
+.bgimg-1,
+.bgimg-2,
+.bgimg-3 {
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -18,32 +29,36 @@ body, html {
 
 /* First image (Logo. Full height) */
 .bgimg-1 {
-  background-image: url('./assets/images/parallax1.jpg');
+  background-image: url("./assets/images/parallax1.jpg");
   min-height: 65vh;
 }
 
 /* Second image (Portfolio) */
 .bgimg-2 {
-  background-image: url('./assets/images/parallax2.jpg');
+  background-image: url("./assets/images/parallax2.jpg");
   min-height: 400px;
 }
 
 /* Third image (Contact) */
 .bgimg-3 {
-  background-image: url('./assets/images/parallax3.jpg');
+  background-image: url("./assets/images/parallax3.jpg");
   min-height: 400px;
 }
 
-.w3-wide {letter-spacing: 10px;}
-.w3-hover-opacity {cursor: pointer;}
+.w3-wide {
+  letter-spacing: 10px;
+}
+.w3-hover-opacity {
+  cursor: pointer;
+}
 
 /* Turn off parallax scrolling for tablets and phones */
 /* @media only screen and (max-device-width: 1600px) {
   .bgimg-1, .bgimg-2, .bgimg-3 {
     /* background-attachment: scroll; */
-    /* min-height: 600px;
+/* min-height: 600px;
   }
-} */ 
+} */
 
 /* @media (max-width: 700px) {
   .bgimg-1 {
@@ -51,7 +66,7 @@ body, html {
   }
 } */
 
-.row{
+.row {
   display: flex;
   flex-wrap: wrap;
 }
@@ -62,11 +77,10 @@ body, html {
   top: 0px;
   left: 0px;
   width: 100%;
-  
 }
 
-.on-top{
-  z-index: 9000 !important; 
+.on-top {
+  z-index: 9000 !important;
   position: fixed;
   top: 0;
   right: 0;
@@ -77,17 +91,27 @@ body, html {
   padding-top: 64px;
   justify-content: space-evenly;
   display: flex;
-
 }
 .link-icon {
   width: 150px;
- height: auto;
+  height: auto;
 }
 
 @media (max-width: 700px) {
-  .link-icon{
+  .link-icon {
     width: 50px;
   }
-
 }
 
+.project-modal {
+  z-index: 3;
+  padding-top: 100px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgb(0, 0, 0);
+  background-color: rgba(0, 0, 0, 0.4);
+}

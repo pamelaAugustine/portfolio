@@ -1,27 +1,31 @@
 import React, { useState } from "react";
-import Links from './Links'
-import Skills from './Skills'
-import Tools from './Tools'
-
+import Links from "./Links";
+import Skills from "./Skills";
+import Tools from "./Tools";
 
 const Main = () => {
   const [toggle, setToggle] = useState(false);
+  const [toggleModal, setToggleModal] = useState(false);
+  const [caption, setCaption] = useState("");
+  const [image, setImage] = useState("");
 
-  const onClick = () => {
-    console.log("this was clicked!");
+  const onClick = (event) => {
+    setToggleModal(true);
+    setCaption(event.target.alt);
+    setImage(event.target.currentSrc)
+    console.log(event);
   };
   return (
-    <div>   
+    <div>
       <div
-            className="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large on-top"
-            onClick={() => setToggle(!toggle)}
-            title="Toggle Navigation Menu"
-          >
-            <i className="fas fa-bars"></i>
-          </div>
+        className="w3-bar-item w3-button w3-hover-black w3-hide-medium w3-hide-large on-top"
+        onClick={() => setToggle(!toggle)}
+        title="Toggle Navigation Menu"
+      >
+        <i className="fas fa-bars"></i>
+      </div>
       <div className="w3-top">
         <div className="w3-bar" id="myNavbar">
-          
           <a href="#home" className="w3-bar-item w3-button">
             HOME
           </a>
@@ -36,43 +40,43 @@ const Main = () => {
           </a>
         </div>
         <div
-        className={
-          toggle
-            ? "w3-bar-block w3-white w3-hide-large w3-hide-medium dropdown"
-            : "w3-hide"
-        }
-      > 
-       <a
-      href="#home"
-      className="w3-bar-item w3-button"
-      onClick={() => setToggle(!toggle)}
-    >
-      HOME
-    </a>
-         <a
-          href="#about"
-          className="w3-bar-item w3-button"
-          onClick={() => setToggle(!toggle)}
+          className={
+            toggle
+              ? "w3-bar-block w3-white w3-hide-large w3-hide-medium dropdown"
+              : "w3-hide"
+          }
         >
-          ABOUT
-        </a>
-        <a
-          href="#portfolio"
-          className="w3-bar-item w3-button"
-          onClick={() => setToggle(!toggle)}
-        >
-          PORTFOLIO
-        </a>
-        <a
-          href="#tools"
-          className="w3-bar-item w3-button"
-          onClick={() => setToggle(!toggle)}
-        >
-          TOOLS
-        </a>
+          <a
+            href="#home"
+            className="w3-bar-item w3-button"
+            onClick={() => setToggle(!toggle)}
+          >
+            HOME
+          </a>
+          <a
+            href="#about"
+            className="w3-bar-item w3-button"
+            onClick={() => setToggle(!toggle)}
+          >
+            ABOUT
+          </a>
+          <a
+            href="#portfolio"
+            className="w3-bar-item w3-button"
+            onClick={() => setToggle(!toggle)}
+          >
+            PORTFOLIO
+          </a>
+          <a
+            href="#tools"
+            className="w3-bar-item w3-button"
+            onClick={() => setToggle(!toggle)}
+          >
+            TOOLS
+          </a>
+        </div>
       </div>
-      </div>
-   
+
       <div className="bgimg-1 w3-display-container w3-opacity-min" id="home">
         <div className="w3-display-middle row">
           <span className="w3-center w3-padding-large w3-black w3-xlarge w3-wide w3-animate-opacity">
@@ -80,11 +84,10 @@ const Main = () => {
           </span>
         </div>
       </div>
-      <Links/>
+      <Links />
       <div className="w3-content w3-container w3-padding-64" id="about">
-      
         <h3 className="w3-center">ABOUT ME</h3>
-        
+
         <p className="w3-center">
           <em>I'M A BOSS!</em>
         </p>
@@ -136,15 +139,15 @@ const Main = () => {
           </div>
         </div>
       </div>
-     
-    
-       
+
       <div className="bgimg-2 w3-display-container">
-        <div className="w3-display-middle">
-          <span className="w3-xxlarge w3-text-white w3-wide">BOSS SKILLS</span>
+        <div className="w3-display-middle row">
+          <span className="w3-center w3-xxlarge w3-text-white w3-padding-large w3-wide ">
+            BOSS <span>SKILLS</span>{" "}
+          </span>
         </div>
       </div>
-      <Skills/>
+      <Skills />
       <div className="w3-content w3-container w3-padding-64" id="portfolio">
         <h3 className="w3-center">MY WORK</h3>
         <p className="w3-center">
@@ -237,32 +240,31 @@ const Main = () => {
               alt="Sailing"
             ></img>
           </div>
-        
         </div>
       </div>
-      <div id="modal01" className="w3-modal w3-black" onClick={onClick}>
+     {toggleModal && <div className="project-modal w3-black" onClick={()=> setToggleModal(false)}>
         <span
           className="w3-button w3-large w3-black w3-display-topright"
           title="Close Modal Image"
         >
           <i className="fas fa-remove"></i>
         </span>
-        <div className="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
+     <div className="w3-modal-content w3-animate-zoom w3-center w3-transparent w3-padding-64">
           <img
-            id="img01"
+            src={image}
             className="w3-image"
-            alt="another more meaningful text"
+            alt={caption}
           ></img>
-          <p id="caption" className="w3-opacity w3-large"></p>
+          <p className="w3-opacity w3-large">{caption}</p>
         </div>
-      </div>
+      </div>}
       <div className="bgimg-3 w3-display-container w3-opacity-min">
         <div className="w3-display-middle">
           <span className="w3-xxlarge w3-text-white w3-wide">TOOLS</span>
         </div>
       </div>
-      <Tools/>
-     
+      <Tools />
+
       <footer className="w3-center w3-black w3-padding-64 w3-opacity w3-hover-opacity-off">
         <a href="#home" className="w3-button w3-light-grey">
           <i className="fas fa-arrow-up w3-margin-right"></i>To the top
