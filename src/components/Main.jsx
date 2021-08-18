@@ -62,17 +62,9 @@ const Main = () => {
           <i className="fas fa-linkedin w3-hover-opacity"></i>
         </div>
         <p>
-          Powered by{" "}
-          <a
-            href="https://www.w3schools.com/w3css/default.asp"
-            title="W3.CSS"
-            target="_blank"
-            className="w3-hover-text-green"
-            rel="noreferrer"
-          >
-            w3.css
-          </a>
+         By Pamela Augustine 2021
         </p>
+        {/* Special thanks to W3Schools */}
       </footer>
     </div>
   );
