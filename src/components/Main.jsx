@@ -60,11 +60,11 @@ const Main = () => {
         <div className="w3-row-padding w3-center">
           <div className="w3-col m3">
             <img
-              src="./assets/images/p1.jpg"
+              src="./assets/images/heatMap.png"
               style={{ width: 100 + "%" }}
               onClick={onClick}
               className="w3-hover-opacity"
-              alt="The mist over the mountains"
+              alt="Heat Map created using D3"
             ></img>
           </div>
 
