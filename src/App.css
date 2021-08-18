@@ -80,7 +80,7 @@ html {
 }
 
 .on-top {
-  z-index: 9000 !important;
+  z-index: 19 !important;
   position: fixed;
   top: 0;
   right: 0;
@@ -103,8 +103,8 @@ html {
   }
 }
 
-.project-modal {
-  z-index: 3;
+/* .project-modal {
+  z-index: 20;
   padding-top: 100px;
   position: fixed;
   left: 0;
@@ -113,8 +113,8 @@ html {
   height: 100%;
   overflow: auto;
   background-color: rgb(0, 0, 0);
-  background-color: rgba(0, 0, 0, 0.4);
-}
+ 
+} */
 
 ::-webkit-scrollbar {
   width: 10px;
