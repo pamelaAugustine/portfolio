@@ -1,4 +1,5 @@
 import React from "react";
+// import { Container } from "./style";
 
 
 const Modal = ({
@@ -9,7 +10,8 @@ const Modal = ({
   image,
   setImage,
 }) => (
-  <div>
+  // <Container>
+ <div>
     {toggleModal && (
       <div
         className="project-modal w3-black"
@@ -27,7 +29,8 @@ const Modal = ({
         </div>
       </div>
     )}
-  </div>
+</div>
+  // </Container>
 );
 
 export default Modal;

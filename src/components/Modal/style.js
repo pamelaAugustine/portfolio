@@ -1,8 +1,8 @@
 // import styled from "styled-components";
 
 // export const Container = styled.div`
-//   /* color: #fff !important;
-//   background-color: #000 !important; */
+//   color: #fff !important;
+//   background-color: #000 !important; 
 //   z-index: 3;
 //   padding-top: 100px;
 //   position: fixed;
