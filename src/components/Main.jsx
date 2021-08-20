@@ -5,6 +5,7 @@ import Tools from "./Tools";
 import NavBar from "./NavBar/NavBar";
 import AboutMe from "./AboutMe/AboutMe";
 import Work from './Work/Work'
+import BounceLink from './BounceLink/BounceLink'
 //import Modal from "./Modal/Modal";
 
 const Main = () => {
@@ -29,6 +30,7 @@ const Main = () => {
           </span>
         </div>
       </div>
+      <BounceLink />
       <Links />
       <AboutMe />
 
