@@ -1,17 +1,15 @@
 import './App.css';
-import './vendor/font-awesome/css/all.css';
-import './assets/w3.css';
-import Main from './components/Main';
-
-
-
-function App() {
+export default function App() {
   return (
-    <div>
-      
-<Main/>
+    <div className="container">
+      <div className="content">
+        <span className="text">🚧 Under Construction 🚧</span>
+      </div>
+      <div className="footer">
+      <span>made with ❤️ by Pamela Augustine</span>
+        <br />
+        <span>© 2025 - All rights reserved.</span>
+      </div>
     </div>
   );
 }
-
-export default App;
