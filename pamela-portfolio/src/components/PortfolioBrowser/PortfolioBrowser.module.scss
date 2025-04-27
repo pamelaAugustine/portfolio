@@ -1,0 +1,230 @@
+@use '../../styles/variables' as *;
+
+body {
+  color: var(--color-text);
+}
+
+.browserWindow {
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  overflow: hidden;
+  margin: 1rem; /* smaller margin on mobile */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  background: var(--color-background);
+}
+
+.browserHeader {
+  display: flex;
+  align-items: center;
+  padding: 0.5rem;
+  background: var(--color-secondary);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.browserButtons {
+  display: flex;
+  gap: 0.5rem;
+  margin-right: 1rem;
+}
+
+.button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+}
+
+.red {
+  background: #ff5f56;
+}
+
+.yellow {
+  background: #ffbd2e;
+}
+
+.green {
+  background: #27c93f;
+}
+
+.browserAddressBar {
+  flex-grow: 1;
+  padding: 0.3rem 1rem;
+  background: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--color-black);
+}
+
+.browserTabs {
+  display: flex;
+  overflow-x: auto;
+  white-space: nowrap;
+  background: var(--color-tab-inactive);
+  border-bottom: 1px solid var(--color-border);
+  width: 100%;
+}
+
+.tab {
+  flex: 0 0 auto;
+  width: auto;
+  text-align: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  transition: background 0.3s;
+  font-weight: 500;
+  color: var(--color-text);
+  border-right: 1px solid var(--color-border);
+
+  &:last-child {
+    border-right: none;
+  }
+}
+
+.tab:hover {
+  background: var(--color-tab-active);
+  color: var(--color-white);
+  transform: scale(1.03);
+  transition: transform 0.2s;
+}
+
+.active {
+  background: var(--color-tab-active);
+  color: var(--color-white);
+  border-bottom: 2px solid var(--color-primary);
+}
+
+.browserContent {
+  padding: 1.5rem 1rem; /* tighter padding on mobile */
+}
+
+.homeContent {
+  text-align: center;
+
+  h1 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  h2 {
+    font-size: 1.25rem;
+    margin-bottom: 1.5rem;
+    color: var(--color-primary);
+  }
+
+  p {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+
+  button {
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background-color: var(--color-primary);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background 0.3s;
+
+    &:hover {
+      background-color: var(--color-secondary);
+    }
+  }
+}
+
+.aboutContent {
+  max-width: 700px;
+  margin: 0 auto;
+  line-height: 1.6;
+  font-size: 1rem;
+
+  h2 {
+    margin-bottom: 1rem;
+  }
+
+  p {
+    margin-bottom: 1rem;
+  }
+}
+
+.browserAddressContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* <-- This adds the spacing you asked for */
+  flex-grow: 1;
+}
+
+.browserAddressBar {
+  flex-grow: 1;
+  padding: 0.3rem 1rem;
+  background: white;
+  border-radius: 4px;
+  font-size: 0.9rem;
+  color: var(--color-black);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.themeToggleIcon {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 1.2rem;
+  color: var(--color-text);
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--color-primary);
+  }
+}
+
+
+/* --------- DESKTOP: widen tabs, fix layout --------- */
+@media (min-width: 600px) {
+  .browserWindow {
+    margin: 0;
+    max-width: unset;
+    width: 100%;
+  }
+
+  .browserTabs {
+    overflow-x: visible;
+    white-space: normal;
+  }
+
+  .tab {
+    flex: 1;
+    padding: 0.75rem 1.5rem;
+  }
+
+  .browserContent {
+    padding: 2rem;
+  }
+
+  .homeContent h1 {
+    font-size: 2.5rem;
+  }
+
+  .homeContent h2 {
+    font-size: 1.5rem;
+  }
+
+  .aboutContent {
+    font-size: 1.1rem;
+  }
+}
+
+// Work Grid
+.workGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+  
+  @media (min-width: 700px) {
+    .workGrid {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  

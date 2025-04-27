@@ -1,0 +1,25 @@
+:root {
+  --color-background: #F5F5F5; /* light gray instead of white */
+  --color-text: #02111B;
+  --color-primary: #A51080; /* your pink */
+  --color-secondary: #8D89A6; /* cool gray background for tabs */
+  --color-border: #8D89A6;
+  --color-tab-inactive: #8D89A6;
+  --color-tab-active: #A51080;
+  --font-family: 'Sansation', sans-serif;
+  --color-black: #02111B;
+  --color-white: #FCFCFC;
+}
+
+/* Dark mode overrides */
+[data-theme='dark'] {
+  --color-background: #02111B;
+  --color-text: #FCFCFC;
+  --color-primary: #A51080;
+  --color-secondary: #8D89A6;
+  --color-border: #8D89A6;
+  --color-tab-inactive: #8D89A6;
+  --color-tab-active: #A51080;
+}
+
+  
