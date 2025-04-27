@@ -7,6 +7,11 @@ body {
 .appContainer {
   background-color: var(--color-background);
   min-height: 100vh;
-  padding: 2rem;
+}
+
+@media (min-width: 64em) {
+  .appContainer {
+    padding: 1rem;
+  }
 }
 
