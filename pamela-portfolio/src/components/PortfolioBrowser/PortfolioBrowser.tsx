@@ -1,5 +1,4 @@
-// src/components/PortfolioBrowser/PortfolioBrowser.tsx
-import React, { useState } from "react";
+import { useState } from "react";
 import styles from "./PortfolioBrowser.module.scss";
 import ProjectCard from "../ProjectCard/ProjectCard";
 
