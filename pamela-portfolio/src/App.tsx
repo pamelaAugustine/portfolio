@@ -1,12 +1,18 @@
-import PortfolioBrowser from './components/PortfolioBrowser/PortfolioBrowser';
-import styles from './App.module.scss';
+import Header from "@/components/Header"
+import Hero from "@/components/Hero"
+import ProjectsSection from "@/components/ProjectsSection"
+//import { ThemeProvider } from "@/components/ThemeProvider"
 
-function App() {
+
+export default function App() {
   return (
-    <div className={styles.appContainer}>
-      <PortfolioBrowser />
-    </div>
-  );
+    <>
+      <Header />
+      <main className="pt-24">
+        <Hero />
+        <ProjectsSection />
+        {/* Work, About, Contact sections will go here */}
+      </main>
+    </>
+  )
 }
-
-export default App;
