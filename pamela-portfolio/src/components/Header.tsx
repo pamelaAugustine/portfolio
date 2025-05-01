@@ -1,6 +1,14 @@
 import { motion } from "framer-motion";
-import { Mail } from "lucide-react";
+import { Mail, Menu } from "lucide-react";
 import ThemeToggle from "@/components/ThemeToggle";
+import {
+  Sheet,
+  SheetContent,
+  SheetHeader,
+  SheetTrigger,
+  SheetTitle,
+  SheetClose
+} from "@/components/ui/sheet"
 
 export default function Header() {
   return (
@@ -44,7 +52,6 @@ export default function Header() {
               />
             </svg>
           </a>
-          {/* https://www.linkedin.com/in/pamela-augustine-752822213/ */}
           <a
             href="https://linkedin.com/in/pamela-augustine-752822213/"
             target="_blank"
@@ -79,18 +86,52 @@ export default function Header() {
         </div>
       </div>
 
-      <nav className="flex gap-6 text-sm items-center">
-        <a href="#work" className="hover:underline">
+      <nav className="hidden md:flex gap-6 text-sm items-center">
+        <a href="#work" className="relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
           Work
         </a>
-        <a href="#about" className="hover:underline">
+        <a href="#about" className="relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
           About
         </a>
-        <a href="#contact" className="hover:underline">
+        <a href="#contact" className="relative inline-block after:content-[''] after:absolute after:left-0 after:-bottom-1 after:h-[3px] after:w-0 after:bg-[var(--primary)] after:transition-all after:duration-300 hover:after:w-full">
           Contact
         </a>
         <ThemeToggle />
       </nav>
+
+      {/* Mobile Hamburger Menu */}
+      <div className="md:hidden">
+        <Sheet>
+          <SheetTrigger asChild>
+            <button aria-label="Open menu">
+              <Menu className="w-6 h-6" />
+            </button>
+          </SheetTrigger>
+          <SheetContent side="right" className="bg-white dark:bg-black">
+            <SheetHeader>
+              <SheetTitle className="text-lg font-semibold">Menu</SheetTitle>
+            </SheetHeader>
+            <nav className="mt-4 flex flex-col gap-4 text-base px-4">
+              <SheetClose asChild>
+              <a href="#work" className="hover:underline">
+                Work
+              </a>
+              </SheetClose>
+              <SheetClose asChild>
+              <a href="#about" className="hover:underline">
+                About
+              </a>
+              </SheetClose>
+              <SheetClose asChild>
+              <a href="#contact" className="hover:underline">
+                Contact
+              </a>
+              </SheetClose>
+              <ThemeToggle />
+            </nav>
+          </SheetContent>
+        </Sheet>
+      </div>
     </motion.header>
   );
 }
