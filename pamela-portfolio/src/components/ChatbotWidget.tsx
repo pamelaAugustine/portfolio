@@ -16,7 +16,6 @@ export default function ChatbotWidget() {
   const [input, setInput] = useState("");
   const [username, setUsername] = useState<string | null>(null);
   const chatEndRef = useRef<HTMLDivElement>(null);
-  const [isTyping, setIsTyping] = useState(false);
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -52,8 +51,7 @@ export default function ChatbotWidget() {
       ]);
       return;
     }
-    setIsTyping(true);
-    try {
+       try {
       const res = await fetch("/api/chat", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -66,8 +64,6 @@ export default function ChatbotWidget() {
         ...prev,
         { sender: "bot", text: "Something went wrong." },
       ]);
-    } finally {
-      setIsTyping(false); // hide after response
     }
   };
 
