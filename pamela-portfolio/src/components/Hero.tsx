@@ -1,5 +1,5 @@
-import { motion } from "framer-motion"
-import { Button } from "@/components/ui/button"
+import { motion } from "framer-motion";
+import { Button } from "@/components/ui/button";
 
 export default function Hero() {
   return (
@@ -10,16 +10,19 @@ export default function Hero() {
         transition={{ duration: 0.8 }}
         className="text-4xl md:text-6xl font-bold mb-4"
       >
-        Hi, I'm Pamela.
+        Hi, I'm{" "}
+        <span className="text-[#E02C9A]">Pamela</span>.
       </motion.h1>
+
       <motion.p
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2, duration: 0.8 }}
         className="text-lg md:text-2xl text-gray-500 dark:text-gray-400 mb-8"
       >
-        I build polished, thoughtful front-end experiences.
+        Full-stack trained and frontend obsessed, I craft polished user experiences and have a blast doing it.
       </motion.p>
+
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
@@ -30,5 +33,5 @@ export default function Hero() {
         </Button>
       </motion.div>
     </section>
-  )
+  );
 }
