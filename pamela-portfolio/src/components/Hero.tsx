@@ -20,7 +20,7 @@ export default function Hero() {
         transition={{ delay: 0.2, duration: 0.8 }}
         className="text-lg md:text-2xl text-gray-500 dark:text-gray-400 mb-8"
       >
-        Full-stack trained and frontend obsessed, I craft polished user experiences and have a blast doing it.
+        I build sleek front-end apps, sprinkle in AI, and taught a chatbot to be my hype man — ask it anything!
       </motion.p>
 
       <motion.div

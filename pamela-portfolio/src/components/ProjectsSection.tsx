@@ -1,50 +1,8 @@
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-
-const projects = [
-  {
-    title: "Visit Cincy Digital Bid Book",
-    description:
-      "Interactive bid book to streamline event planning for Visit Cincy.",
-    imageUrl: "/images/cincy-bidbook.png",
-    link: "https://www.visitcincy.com/svtest/bidbook/",
-  },
-  {
-      title: "Visit Cheyenne | Microsite",
-      description:
-      "Built a thematic campaign site showcasing cowboy culture experiences in Cheyenne to boost tourism and event participation.",
-      link: "https://www.cheyenne.org/cowboy-adventures/",
-      imageUrl: "/images/cheyenne-cowboy.png",
-    },
-    {
-        title: "Visit Gulf | Wellness Campaign Site",
-        description:
-        "Helped develop a thematic microsite focused on promoting wellness-focused travel experiences along the Gulf Coast.",
-        link: "https://www.visitgulf.com/svtest/wellness-campaign-test/",
-        imageUrl: "/images/gulf-wellness.png",
-    },
-    {
-      title: "Visit Phoenix Downtown Map",
-      description:
-        "An interactive map experience for visitors to downtown Phoenix.",
-      imageUrl: "/images/phoenix-map.png",
-      link: "https://www.visitphoenix.com/svtest/downtown-map/",
-    },
-  {
-    title: "Visit McKinney | Interactive Map",
-    description:
-      "Built a dynamic, mobile-friendly map experience for visitors to explore McKinney’s districts and local highlights.",
-    link: "https://www.visitmckinney.com/interactivemap/",
-    imageUrl: "/images/mckinney-map.png",
-  },
-  {
-    title: "Visit Fort Worth | Interactive Map",
-    description:
-      "Created a custom illustrated map for Visit Fort Worth to showcase key attractions and districts through an engaging digital experience.",
-    link: "https://www.fortworth.com/svtest/interactive-map/",
-    imageUrl: "/images/fortworth-map.png",
-  },
-];
+import { workProjects } from "@/components/data/workProjects";
+import { schoolProjects } from "@/components/data/schoolProjects";
+import { Project } from "@/components/types/Project";
 
 export default function ProjectsSection() {
   return (
@@ -59,25 +17,98 @@ export default function ProjectsSection() {
         My Work
       </motion.h2>
 
+      <motion.div className="py-20 px-8 max-w-6xl mx-auto">
+        These projects were built while working at{" "}
+        <a
+          href="https://www.simpleviewinc.com"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="underline text-blue-500 hover:text-blue-700"
+        >
+          Simpleview
+        </a>{" "}
+        (a Granicus Company), a leading provider of CRM, CMS, and digital
+        marketing solutions for destination marketing organizations (DMOs)
+        around the world. While I can’t share the source code due to client
+        confidentiality, I played a key role in developing them using Vue,
+        JavaScript, CSS, and a proprietary templating engine. I’m happy to chat
+        in more detail about my contributions!
+      </motion.div>
+
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projects.map((project, index) => (
+        {workProjects.map((project: Project, index: number) => (
           <motion.div
             key={index}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ once: true }}
+            className="flex"
           >
-            <a href={project.link} target="_blank" rel="noopener noreferrer">
-              <Card className="hover:shadow-xl transition-shadow">
+            <a
+              href={project.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <Card className="flex flex-col h-full hover:shadow-xl transition-shadow">
                 <CardHeader className="p-0">
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="object-cover w-full h-full"
+                    className="object-cover w-full h-48"
                   />
                 </CardHeader>
-                <CardContent className="p-4">
+                <CardContent className="p-4 flex-grow flex flex-col justify-between">
+                  <CardTitle className="text-lg mb-2">
+                    {project.title}
+                  </CardTitle>
+                  <p className="text-sm text-muted-foreground">
+                    {project.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
+          </motion.div>
+        ))}
+      </div>
+
+      {/* School & Personal Projects */}
+      <motion.h3
+        initial={{ opacity: 0, y: 20 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+        viewport={{ once: true }}
+        className="text-2xl font-semibold mt-20 mb-8 text-center"
+      >
+        School & Personal Projects
+      </motion.h3>
+
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {schoolProjects.map((project: Project, index: number) => (
+          <motion.div
+            key={`school-${index}`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ once: true }}
+            className="flex"
+          >
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full"
+            >
+              <Card className="flex flex-col h-full hover:shadow-xl transition-shadow">
+                <CardHeader className="p-0">
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="object-cover w-full h-48"
+                  />
+                </CardHeader>
+                <CardContent className="p-4 flex-grow flex flex-col justify-between">
                   <CardTitle className="text-lg mb-2">
                     {project.title}
                   </CardTitle>
