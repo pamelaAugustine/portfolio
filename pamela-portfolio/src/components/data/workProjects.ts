@@ -36,17 +36,17 @@ export const workProjects = [
     link: "https://www.visitphoenix.com/svtest/downtown-map/",
   },
   {
-    title: "Visit McKinney | Interactive Map",
+    title: "San Antonio | Riverwalk",
     description:
-      "Built a dynamic, mobile-friendly map experience for visitors to explore McKinney’s districts and local highlights.",
-    link: "https://www.visitmckinney.com/interactivemap/",
-    imageUrl: "/images/mckinney-map.png",
+      "Contributed to a multisite project for the San Antonio River Walk, working with my team to deliver a custom-built site for the client.",
+    link: "https://www.thesanantonioriverwalk.com/",
+    imageUrl: "/images/riverwalk.png",
   },
   {
-    title: "Visit Fort Worth | Interactive Map",
+    title: "Visit Rapid City | New Build",
     description:
-      "Created a custom illustrated map for Visit Fort Worth to showcase key attractions and districts through an engaging digital experience.",
-    link: "https://www.fortworth.com/svtest/interactive-map/",
-    imageUrl: "/images/fortworth-map.png",
+      "Helped build a brand-new tourism website for Rapid City from the ground up, focusing on responsive design and dynamic content.",
+    link: "https://www.visitrapidcity.com/",
+    imageUrl: "/images/rapid-city.png",
   },
 ];

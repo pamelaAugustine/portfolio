@@ -29,7 +29,7 @@ export default function AboutMe() {
       <Card>
         <CardContent className="p-6 text-center">
           <p className="text-lg leading-relaxed">
-            I’m Pamela, a full-stack trained Software Engineer with a frontend
+            I’m a full-stack trained Software Engineer with a frontend
             focus. I build intuitive, accessible user interfaces using React,
             TypeScript, and Vue, and have experience with backend tools like
             Node and Python. I also bring exposure to AI and machine learning
