@@ -126,7 +126,7 @@ export default function AboutMe() {
           </div>
 
           <div className="mt-10 flex justify-center">
-            <a href="/PamelaAugustineResume2025.pdf" download>
+            <a href="/Pamela_Augustine_Resume_2025.pdf" download>
               <Button variant="default" className="flex items-center gap-2">
                 <Download className="w-4 h-4" />
                 Download Resume
