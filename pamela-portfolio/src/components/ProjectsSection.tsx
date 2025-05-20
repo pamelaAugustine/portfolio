@@ -56,7 +56,7 @@ export default function ProjectsSection() {
                   <img
                     src={project.imageUrl}
                     alt={project.title}
-                    className="object-cover w-full h-48"
+                    className="object-cover object-top w-full h-full"
                   />
                 </CardHeader>
                 <CardContent className="p-4 flex-grow flex flex-col justify-between">
