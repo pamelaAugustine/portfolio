@@ -1,5 +1,23 @@
 export const schoolProjects = [
   {
+    title: "AI Housing Assistant",
+  description:
+    "A conversational AI assistant built to help unhoused and low-income users navigate affordable housing applications. Uses LLMs to ask questions, explain program options, and streamline the intake process.",
+  tech: [
+    "NestJS",
+    "Next.js",
+    "Prisma",
+    "PostgreSQL",
+    "TypeScript",
+    "LLM (Phi-3 via Ollama)",
+    "React"
+  ],
+    imageUrl: "/images/housing-assistant.png",
+    videoUrl: "/videos/housing-assistant.mp4",
+    github: "https://github.com/jtcCapstone/bloomCapstone",
+    link: "https://github.com/jtcCapstone/bloomCapstone",
+  },
+  {
     title: "Local Weather Prediction App",
     description:
       "A machine learning-powered web app that predicts next-day temperatures using historical weather data. It features a Python FastAPI backend with a k-Nearest Neighbors (k-NN) model and a responsive React frontend styled with shadcn/ui.",
