@@ -7,4 +7,5 @@ export interface Project {
   imageUrl?: string;
   videoUrl?: string;
   link?: string;
+  pullRequest?: string;
 }
