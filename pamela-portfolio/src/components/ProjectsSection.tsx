@@ -96,7 +96,7 @@ export default function ProjectsSection() {
         Open Source Contributions
       </motion.h3>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
         {openSourceContributions.map((project: Project, index: number) => (
           <motion.div
             key={`school-${index}`}
@@ -106,54 +106,65 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
             className="flex"
           >
-            
-              <Card className="flex flex-col h-full hover:shadow-xl transition-shadow">
-                <CardHeader className="p-0">
-                  {project.videoUrl ? (
-                    <video
-                      className="object-cover w-full h-48"
-                      src={project.videoUrl}
-                      controls
-                      muted
-                      playsInline
-                      preload="metadata"
-                      poster={project.imageUrl} 
-                    />
-                  ) : (
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="object-cover w-full h-48"
-                    />
-                  )}
-                </CardHeader>
+            <Card className="flex flex-col h-full hover:shadow-xl transition-shadow">
+              <CardHeader className="p-0">
+                {project.videoUrl ? (
+                  <video
+                    className="object-cover w-full h-48"
+                    src={project.videoUrl}
+                    controls
+                    muted
+                    playsInline
+                    preload="metadata"
+                    poster={project.imageUrl}
+                  />
+                ) : (
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="object-cover w-full h-48"
+                  />
+                )}
+              </CardHeader>
 
-                <CardContent className="p-4 flex-grow flex flex-col justify-between">
-                  <CardTitle className="text-lg mb-2">
-                    {project.title}
-                  </CardTitle>
-                  <p className="text-sm text-muted-foreground">
-                    {project.description}
-                  </p>
-                  <div className="mt-4 flex justify-between items-center">
-                  <button
-                    onClick={(e) => {
-                      e.preventDefault();
-                      setActiveTech(project.tech ?? []);
-                      setActiveTitle(project.title);
-                      setOpenTechModal(true);
-                    }}
-                    className="text-sm text-blue-500 hover:underline cursor-pointer"
+              <CardContent className="p-4 flex-grow flex flex-col justify-between">
+                <CardTitle className="text-lg mb-2">
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full"
                   >
-                    View Tech Used
-                  </button>
-                   <a
+                    {project.title}
+                  </a>
+                </CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  {project.description}
+                </p>
+                <div className="mt-4 flex justify-between items-center">
+                  {project.tech && project.tech.length > 0 && (
+                    <button
+                      onClick={(e) => {
+                        e.preventDefault();
+                        setActiveTech(project.tech ?? []);
+                        setActiveTitle(project.title);
+                        setOpenTechModal(true);
+                      }}
+                      className="text-sm text-blue-500 hover:underline cursor-pointer"
+                    >
+                      View Tech Used
+                    </button>
+                  )}
+
+                  <a
                     href={project?.pullRequest}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="hover:text-primary cursor-pointer"
+                    className="hover:text-primary cursor-pointer text-blue-500 hover:underline"
                     aria-label="View on GitHub"
-                  >Pull Request</a>
+                  >
+                    Pull Request
+                  </a>
                   <a
                     href={project.github}
                     target="_blank"
@@ -172,10 +183,9 @@ export default function ProjectsSection() {
                       <path d="M12 .5C5.37.5 0 5.87 0 12.497c0 5.282 3.438 9.756 8.205 11.337.6.11.82-.26.82-.577 0-.285-.012-1.234-.017-2.238-3.338.727-4.042-1.608-4.042-1.608-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.996.11-.775.418-1.305.76-1.604-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.468-2.38 1.236-3.22-.125-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.004-.404c1.02.005 2.048.138 3.005.404 2.29-1.553 3.296-1.23 3.296-1.23.653 1.652.243 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.805 5.625-5.475 5.921.43.37.814 1.103.814 2.222 0 1.606-.015 2.902-.015 3.293 0 .32.216.694.825.576C20.565 22.25 24 17.78 24 12.497 24 5.87 18.627.5 12 .5z" />
                     </svg>
                   </a>
-                  </div>
-                </CardContent>
-              </Card>
-            
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         ))}
         <Dialog open={openTechModal} onOpenChange={setOpenTechModal}>
@@ -193,7 +203,6 @@ export default function ProjectsSection() {
           </DialogContent>
         </Dialog>
       </div>
-
 
       {/* School & Personal Projects */}
       <motion.h3
@@ -216,36 +225,33 @@ export default function ProjectsSection() {
             viewport={{ once: true }}
             className="flex"
           >
-            
-              <Card className="flex flex-col h-full hover:shadow-xl transition-shadow">
-                <CardHeader className="p-0">
-                  {project.videoUrl ? (
-                    <video
-                      className="object-cover w-full h-48"
-                      src={project.videoUrl}
-                      controls
-                      muted
-                      playsInline
-                      preload="metadata"
-                      poster={project.imageUrl} 
-                    />
-                  ) : (
-                    <img
-                      src={project.imageUrl}
-                      alt={project.title}
-                      className="object-cover w-full h-48"
-                    />
-                  )}
-                </CardHeader>
+            <Card className="flex flex-col h-full hover:shadow-xl transition-shadow">
+              <CardHeader className="p-0">
+                {project.videoUrl ? (
+                  <video
+                    className="object-cover w-full h-48"
+                    src={project.videoUrl}
+                    controls
+                    muted
+                    playsInline
+                    preload="metadata"
+                    poster={project.imageUrl}
+                  />
+                ) : (
+                  <img
+                    src={project.imageUrl}
+                    alt={project.title}
+                    className="object-cover w-full h-48"
+                  />
+                )}
+              </CardHeader>
 
-                <CardContent className="p-4 flex-grow flex flex-col justify-between">
-                  <CardTitle className="text-lg mb-2">
-                    {project.title}
-                  </CardTitle>
-                  <p className="text-sm text-muted-foreground">
-                    {project.description}
-                  </p>
-                  <div className="mt-4 flex justify-between items-center">
+              <CardContent className="p-4 flex-grow flex flex-col justify-between">
+                <CardTitle className="text-lg mb-2">{project.title}</CardTitle>
+                <p className="text-sm text-muted-foreground">
+                  {project.description}
+                </p>
+                <div className="mt-4 flex justify-between items-center">
                   <button
                     onClick={(e) => {
                       e.preventDefault();
@@ -275,10 +281,9 @@ export default function ProjectsSection() {
                       <path d="M12 .5C5.37.5 0 5.87 0 12.497c0 5.282 3.438 9.756 8.205 11.337.6.11.82-.26.82-.577 0-.285-.012-1.234-.017-2.238-3.338.727-4.042-1.608-4.042-1.608-.546-1.387-1.334-1.756-1.334-1.756-1.09-.745.082-.73.082-.73 1.205.085 1.84 1.237 1.84 1.237 1.07 1.834 2.807 1.304 3.492.996.11-.775.418-1.305.76-1.604-2.665-.304-5.466-1.332-5.466-5.931 0-1.31.468-2.38 1.236-3.22-.125-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.3 1.23a11.5 11.5 0 0 1 3.004-.404c1.02.005 2.048.138 3.005.404 2.29-1.553 3.296-1.23 3.296-1.23.653 1.652.243 2.873.12 3.176.77.84 1.234 1.91 1.234 3.22 0 4.61-2.805 5.625-5.475 5.921.43.37.814 1.103.814 2.222 0 1.606-.015 2.902-.015 3.293 0 .32.216.694.825.576C20.565 22.25 24 17.78 24 12.497 24 5.87 18.627.5 12 .5z" />
                     </svg>
                   </a>
-                  </div>
-                </CardContent>
-              </Card>
-            
+                </div>
+              </CardContent>
+            </Card>
           </motion.div>
         ))}
         <Dialog open={openTechModal} onOpenChange={setOpenTechModal}>
