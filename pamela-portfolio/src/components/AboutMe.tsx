@@ -19,7 +19,6 @@ import {
   SiScikitlearn,
   SiHuggingface,
   SiKubernetes,
-  SiAmazon,
   SiVuedotjs,
   SiOpenai,
   SiPostman,
