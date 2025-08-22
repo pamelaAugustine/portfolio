@@ -11,12 +11,21 @@ import {
   SiTypescript,
   SiJavascript,
   SiTailwindcss,
+  SiFigma,
+  SiExpress,
+  SiPostgresql,
   SiMongodb,
-  SiOpenai,
+  SiPytorch,
+  SiScikitlearn,
+  SiHuggingface,
+  SiKubernetes,
+  SiAmazon,
   SiVuedotjs,
+  SiOpenai,
   SiPostman,
   SiGraphql,
   SiAxios,
+  SiJest,
 } from "react-icons/si";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -29,12 +38,15 @@ export default function AboutMe() {
       <Card>
         <CardContent className="p-6 text-center">
           <p className="text-lg leading-relaxed">
-            I’m a full-stack trained Software Engineer with a frontend
-            focus. I build intuitive, accessible user interfaces using React,
-            TypeScript, and Vue, and have experience with backend tools like
-            Node and Python. I also bring exposure to AI and machine learning
-            workflows. I thrive in collaborative teams and take pride in
-            delivering polished, user-centered products.
+            I’m a Software Engineer with a frontend focus who enjoys building
+            interactive web applications. I create intuitive, accessible
+            interfaces with React, Vue, and TypeScript, and also work across the
+            stack with Node.js, Express, PostgreSQL, and MongoDB. My background
+            includes hands-on AI/ML experience from Columbia University’s
+            Applied AI Solutions Engineering program, where I worked with
+            Python, PyTorch, Hugging Face, and cloud deployment. I love
+            simplifying complex problems, collaborating with teams, and
+            delivering polished, user-centered products that make an impact.
           </p>
 
           <div className="mt-8">
@@ -72,9 +84,23 @@ export default function AboutMe() {
                 style={{ color: "#06B6D4" }}
                 className="transition-transform duration-200 hover:scale-110"
               />
+              <SiFigma
+                title="Figma"
+                style={{ color: "#F24E1E" }}
+                className="transition-transform duration-200 hover:scale-110"
+              />
               <FaNodeJs
                 title="Node.js"
                 style={{ color: "#339933" }}
+                className="transition-transform duration-200 hover:scale-110"
+              />
+              <SiExpress
+                title="Express"
+                className="transition-transform duration-200 hover:scale-110 text-gray-800 dark:text-gray-200"
+              />
+              <SiPostgresql
+                title="PostgreSQL"
+                style={{ color: "#336791" }}
                 className="transition-transform duration-200 hover:scale-110"
               />
               <SiMongodb
@@ -87,9 +113,29 @@ export default function AboutMe() {
                 style={{ color: "#3776AB" }}
                 className="transition-transform duration-200 hover:scale-110"
               />
+              <SiPytorch
+                title="PyTorch"
+                style={{ color: "#EE4C2C" }}
+                className="transition-transform duration-200 hover:scale-110"
+              />
+              <SiScikitlearn
+                title="Scikit-learn"
+                style={{ color: "#F7931E" }}
+                className="transition-transform duration-200 hover:scale-110"
+              />
+              <SiHuggingface
+                title="Hugging Face"
+                style={{ color: "#FFAE00" }}
+                className="transition-transform duration-200 hover:scale-110"
+              />
               <FaDocker
                 title="Docker"
                 style={{ color: "#2496ED" }}
+                className="transition-transform duration-200 hover:scale-110"
+              />
+              <SiKubernetes
+                title="Kubernetes"
+                style={{ color: "#326CE5" }}
                 className="transition-transform duration-200 hover:scale-110"
               />
               <FaGitAlt
@@ -122,11 +168,16 @@ export default function AboutMe() {
                 style={{ color: "#5A29E4" }}
                 className="transition-transform duration-200 hover:scale-110"
               />
+              <SiJest
+                title="Jest"
+                style={{ color: "#C21325" }}
+                className="transition-transform duration-200 hover:scale-110"
+              />
             </div>
           </div>
 
           <div className="mt-10 flex justify-center">
-            <a href="/Pamela_Augustine_Resume2025.pdf" download>
+            <a href="/Pamela_Resume_0825.pdf" download>
               <Button variant="default" className="flex items-center gap-2">
                 <Download className="w-4 h-4" />
                 Download Resume
