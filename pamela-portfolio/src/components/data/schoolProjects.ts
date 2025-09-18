@@ -13,7 +13,7 @@ export const schoolProjects = [
     "React"
   ],
     imageUrl: "/images/housing-assistant.png",
-    videoUrl: "/videos/housing-assistant.mp4",
+    // videoUrl: "/videos/housing-assistant.mp4",
     github: "https://github.com/jtcCapstone/bloomCapstone",
     link: "https://github.com/jtcCapstone/bloomCapstone",
   },
